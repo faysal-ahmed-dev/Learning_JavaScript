@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissor</title>
+</head>
+<body>
+
+    <h3>Rock Paper Scissor Game</h3>
+
+    <button onclick="
+
+        const compNum1 = Math.random();
+        console.log(compNum1);
+
+        let compMove1 = ' ';
+        if(compNum1 >= 0 && compNum1 < 1/3){
+            compMove1 = 'Rock';
+        }
+        else if(compNum1 >= 1/3 && compNum1 < 2/3){
+            compMove1 = 'Paper';
+        }else{
+            compMove1 = 'Scissor';
+        }
+        console.log(compMove1);
+
+        let result1 = ' ';
+
+        if(compMove1 === 'Rock' ){
+            result1 = 'Tie';
+        }
+        else if(compMove1 === 'Paper'){
+            result1 = 'You Lose';
+        } else {
+            result1 = 'You Won';
+        }
+        console.log(result1);
+
+        alert(`You picked rock. Computer picked ${compMove1}. ${result1}.`)
+        "> Rock</button>
+
+    <button onclick="
+        
+        
+        const compNum2 = Math.random();
+        console.log(compNum2);
+
+        let compMove2 = ' ';
+        if(compNum2 >= 0 && compNum2 < 1/3){
+            compMove2 = 'Rock';
+        }
+        else if(compNum2 >= 1/3 && compNum2 < 2/3){
+            compMove2 = 'Paper';
+        }else{
+            compMove2 = 'Scissor';
+        }
+        console.log(compMove2);
+
+        let result2 = ' ';
+
+        if(compMove2 === 'Rock' ){
+            result2 = 'You Won';
+        }
+        else if(compMove2 === 'Paper'){ 
+            result2 = 'Tie';
+        } else {
+            result2 = 'You Lose';
+        }
+        console.log(result2);
+
+        alert(`You picked paper. Computer picked ${compMove2}. ${result2}.`);
+
+        ">Paper</button>
+
+    <button onclick="
+               
+        const compNum3 = Math.random();
+        console.log(compNum3);
+
+        let compMove3 = ' ';
+        if(compNum3 >= 0 && compNum3 < 1/3){
+            compMove3 = 'Rock';
+        }
+        else if(compNum3 >= 1/3 && compNum3 < 2/3){
+            compMove3 = 'Paper';
+        }else{
+            compMove3 = 'Scissor';
+        }
+        console.log(compMove3);
+
+        let result3 = ' ';
+
+        if(compMove3 === 'Rock' ){
+            result3 = 'You Lose';
+        }
+        else if(compMove3 === 'Paper'){
+            result3 = 'You Won';
+        } else {
+            result3 = 'Tie';
+        }
+        console.log(result3);
+
+        alert(`You picked scissor. Computer picked ${compMove3}. ${result3}.`); 
+    
+    "> Scissor</button>
+
+    <script>
+
+    </script>
+    
+</body>
+</html>

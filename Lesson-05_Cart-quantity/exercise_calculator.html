@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <h3> Simple Catculator</h3>
+
+    <div> 
+
+        <button onclick="
+            calc += ' 1 ';
+            console.log(calc); ">  1 </button>
+
+        <button onclick="
+            calc += ' 2 ';
+            console.log(calc); ">  2 </button>
+
+        <button onclick="
+           calc += ' 3 ';
+            console.log(calc); ">  3 </button>
+
+        <button onclick="
+            
+            console.log(' + '); ">  + </button>
+
+    </div>
+    
+    <div>
+
+        <button onclick="
+            calc = 4;
+            console.log(' 4 '); ">  4 </button>
+
+        <button onclick="
+            calc =5;
+            console.log(' 5 '); ">  5 </button>
+
+        <button onclick="
+            calc = 6;
+            console.log(' 6 '); ">  6 </button>
+
+        <button onclick="
+            console.log(' - '); ">  - </button>
+    </div>
+
+    <div> 
+        <button onclick="
+            calc;
+            console.log(' 7 '); ">  7 </button>
+
+        <button onclick="
+            calc++;
+            console.log(' 8 '); ">  8 </button>
+
+        <button onclick="
+            calc++;
+            console.log(' 9 '); ">  9 </button>
+
+        
+        <button onclick="
+            console.log(' * '); ">  * </button>
+    </div>
+
+    <div>
+
+        <button onclick="
+            calc+= 0; 
+            console.log(' 0 ');"> 0 </button>
+
+        <button onclick="
+            
+            console.log(' = ');"> = </button>
+
+        <button onclick="
+            calc+= 0; 
+            console.log(' / ');"> / </button>
+    </div>
+
+    <script>
+        let calc = ' ';
+    </script>
+</body>
+</html>
