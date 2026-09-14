@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temparature Converter</title>
+</head>
+<body>
+    
+    
+
+    <script>
+
+        tempConvert(86, 'F'); 
+
+        function tempConvert(degree, unit){
+            const valueDegree = degree;
+            const valueUnit = unit;
+            let result = ' ';
+
+            if(valueUnit === 'C'){
+               result = (valueDegree * 9/5) + 32;
+               console.log(`${result}'F`);
+            }
+            else if(valueUnit === 'F'){
+                result = ((valueDegree - 32) * 5/9);
+                console.log(`${result}'C`);
+            }else{
+                console.log('Invalid Unit');
+                return;
+            }
+           
+       }
+
+    </script>
+</body>
+</html>

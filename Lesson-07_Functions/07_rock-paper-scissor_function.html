@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissor</title>
+</head>
+<body>
+
+    <h3>Rock Paper Scissor Game</h3>
+
+    <button onclick="
+
+        resultDecide('Rock');
+
+    "> Rock</button>
+
+    <button onclick="
+    
+        resultDecide('Paper');
+
+    ">Paper</button>
+
+    <button onclick="
+
+        resultDecide('Scissor');
+  
+    "> Scissor</button>
+
+
+    <script>
+      
+        function compMovePicking(){
+            const randNum = Math.random();
+            let compPick = ' ';
+            if(randNum >= 0 && randNum < 1/3){
+                compPick = 'Rock';
+            }
+            else if(randNum >= 1/3 && randNum < 2/3){
+                compPick = 'Paper'
+            }
+            else{
+                compPick = 'Scissor';
+            }
+
+            return compPick;
+        }
+
+        function resultDecide(RPS){
+
+            const compMove = compMovePicking();
+            let result = ' ';
+
+            if(RPS === 'Rock'){                   
+                if(compMove === 'Rock' ){
+                    result = 'Tie';
+                }
+                else if(compMove === 'Paper'){
+                    result = 'You Lose';
+                } else {
+                    result = 'You Won';
+                }
+
+                alert(`You picked ${RPS}. Computer picked ${compMove}. ${result}.`);
+            }
+            else if(RPS === 'Paper'){
+                if(compMove === 'Rock' ){
+                    result = 'You Won';
+                }
+                else if(compMove === 'Paper'){
+                    result = 'Tie';
+                } else {
+                    result = 'You Lose';
+                }
+
+                alert(`You picked ${RPS}. Computer picked ${compMove}. ${result}.`);
+            }
+            
+            else if(RPS === 'Scissor'){
+                if(compMove === 'Rock' ){
+                    result = 'You Lose';
+                }
+                else if(compMove === 'Paper'){
+                    result = 'You Won';
+                } else {
+                    result = 'Tie';
+                }
+
+                alert(`You picked ${RPS}. Computer picked ${compMove}. ${result}.`);
+            }
+            
+        }
+
+    </script>
+    
+</body>
+</html>
