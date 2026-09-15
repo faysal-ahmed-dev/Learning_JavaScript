@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+</head>
+<body>
+    
+    <h3> Guess the Coin Flip Result</h3>
+
+    <button onclick="
+        flipResult('Head');
+        ">
+        Head
+    </button>
+
+    <button onclick="
+        flipResult('Tails');
+        ">
+        Tails
+    </button>
+
+    <button onclick="
+        score.wins = 0;
+        score.loses = 0;
+        localStorage.removeItem('localScore');
+        ">
+        Reset Scores
+    </button>
+
+    <script>
+
+        let score = JSON.parse(localStorage.getItem('localScore'));
+
+        if(score === null){
+            score = {
+                wins: 0,
+                loses: 0
+            }
+        }
+
+        function flipResult(buttonName){
+
+            const compPick = compGuess();
+            let result = ' ';
+
+            if(buttonName === 'Head'){
+                if(compPick === 'Head'){
+                    result = 'You Won';
+                }else{
+                    result = 'You Lose';
+                }
+            }
+            else if(buttonName === 'Tails'){
+                if(compPick === 'Head'){
+                    result = 'You Lose';
+                }else{
+                    result = 'You Won';
+                }
+            }
+
+            if(result === 'You Won'){
+                score.wins++;
+            }else{
+                score.loses++;
+            }
+
+            localStorage.setItem('localScore', JSON.stringify(score));
+
+            alert(`You guess ${buttonName}. Flip result is ${compPick}.  ${result}
+            \nWins: ${score.wins}  Loses: ${score.loses}`);
+        }
+
+       
+        function compGuess(){
+            let compMove = ' ';
+            const random = Math.random();
+            if(random >= 0 && random < 0.5){
+                compMove = 'Head';
+            }else{
+                compMove = 'Tails';
+            }
+            return compMove;
+        }
+
+    </script>
+</body>
+</html>
