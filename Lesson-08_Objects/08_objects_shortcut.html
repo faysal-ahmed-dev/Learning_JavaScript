@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Shortcuts</title>
+</head>
+<body>
+    
+
+    <script>
+        const object = {
+            name: 'shirt',
+            color: 'blue',
+            size: 'L',
+            price: 799,
+            method(x,y){
+                console.log(x*y);
+            }
+        };
+
+        console.log(object);
+       // const color = object.color;
+       const { color } = object;
+       console.log(color);
+
+       const {size, price} = object;
+       console.log(size, price); 
+
+       object.method(10,23);
+
+       const object2 ={
+        //color: color,  //take value from color variable
+        color,
+        size,
+       }
+       console.log(object2);
+
+       const str = 'abcdef';
+       console.log(str);
+       console.log(str.length);
+       console.log(str.toUpperCase());
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissor</title>
+</head>
+<body>
+
+    <h3>Rock Paper Scissor Game</h3>
+
+    <button onclick="
+
+        resultDecide('Rock');
+
+    "> Rock</button>
+
+    <button onclick="
+    
+        resultDecide('Paper');
+
+    ">Paper</button>
+
+    <button onclick="
+
+        resultDecide('Scissor');
+  
+    "> Scissor</button>
+
+    <button onclick="
+        count.win = 0;
+        count.lose = 0;
+        count.tie = 0;
+    "> Reset Scores</button>
+
+    <script>
+
+        const count ={
+            win: 0,
+            lose: 0,
+            tie: 0,
+        }
+      
+        function compMovePicking(){
+            const randNum = Math.random();
+            let compPick = ' ';
+            if(randNum >= 0 && randNum < 1/3){
+                compPick = 'Rock';
+            }
+            else if(randNum >= 1/3 && randNum < 2/3){
+                compPick = 'Paper'
+            }
+            else{
+                compPick = 'Scissor';
+            }
+
+            return compPick;
+        }
+
+        function resultDecide(RPS){
+
+            const compMove = compMovePicking();
+            let result = ' ';
+
+            if(RPS === 'Rock'){                   
+                if(compMove === 'Rock' ){
+                    result = 'Tie';
+                }
+                else if(compMove === 'Paper'){
+                    result = 'You Lose';
+                } else {
+                    result = 'You Won';
+                }
+            }
+            else if(RPS === 'Paper'){
+                if(compMove === 'Rock' ){
+                    result = 'You Won';
+                }
+                else if(compMove === 'Paper'){
+                    result = 'Tie';
+                } else {
+                    result = 'You Lose';
+                }
+            }
+            
+            else if(RPS === 'Scissor'){
+                if(compMove === 'Rock' ){
+                    result = 'You Lose';
+                }
+                else if(compMove === 'Paper'){
+                    result = 'You Won';
+                } else {
+                    result = 'Tie';
+                }
+
+            }
+
+            // counting winnings, loses and ties
+
+            if(result === 'You Won'){
+                count.win++;
+            }
+            else if(result === 'You Lose'){
+                count.lose++;
+            }
+            else{
+                count.tie++;
+            }
+            
+            alert(`You picked ${RPS}. Computer picked ${compMove}. ${result}.
+            \nWins: ${count.win} Loses: ${count.lose} Ties: ${count.tie}`);
+        }
+
+    </script>
+    
+</body>
+</html>

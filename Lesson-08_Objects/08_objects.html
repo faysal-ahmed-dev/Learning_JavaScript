@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+
+    <script>
+        const product ={
+            name : 'Shirt',
+            size : 'L',
+            price : 1099,
+            rating : {
+                stars : 4.5,
+                count : 87,
+            },
+            fun : function fnc(x, y){
+                console.log('Addition = ', x + y);
+            }
+        }
+
+         console.log(product);
+        // console.log(product.name);
+        // console.log(product.size);
+        
+        // product.color = 'black';
+        // console.log(product);
+        // delete product.size;
+        // console.log(product);
+        
+        product.fun(4,5);
+        console.log(product.rating.stars);
+        console.log(product['price']);
+
+        const objectTojson = JSON.stringify(product);
+        console.log(objectTojson); //function not included in json
+
+        const jsonToObject = JSON.parse(objectTojson);
+        console.log(jsonToObject);
+
+        
+
+
+    </script>
+</body>
+</html>
