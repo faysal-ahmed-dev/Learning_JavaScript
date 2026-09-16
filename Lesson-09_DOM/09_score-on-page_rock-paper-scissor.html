@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissor</title>
+</head>
+<body>
+
+    <h3>Rock Paper Scissor Game</h3>
+
+    <button onclick="
+
+        resultDecide('Rock');
+
+    "> Rock</button>
+
+    <button onclick="
+    
+        resultDecide('Paper');
+
+    ">Paper</button>
+
+    <button onclick="
+
+        resultDecide('Scissor');
+  
+    "> Scissor</button>
+
+    <p class="js-moves">You picked:  <-> Computer picked: </p>
+
+    <p class="js-result"> Result: </p>
+
+    <p class="js-score"></p>
+
+    <button onclick="
+        scores.win = 0;
+        scores.lose = 0;
+        scores.tie = 0;
+        localStorage.removeItem('scoresLocal');
+        scoreElemUpdate();
+        
+        document.querySelector('.js-result')
+         .innerHTML = `Result: `;
+    "> Reset Scores</button>
+
+    <script src="09_rock-paper-scissor.js">
+    </script>
+    
+</body>
+</html>
