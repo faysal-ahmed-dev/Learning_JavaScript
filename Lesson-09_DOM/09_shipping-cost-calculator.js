@@ -11,14 +11,26 @@ function calcShippingCost(){
     
     let cost = Number(inputElem);
 
-    if(cost < 40){
+    if( inputElem !== "" && cost > 0 && cost < 40 ){
+
         cost += 10;
 
+        document.querySelector('.js-total-cost').classList.remove('js-error-para');
         document.querySelector('.js-total-cost')
           .innerHTML = `Total order cost : $${cost}`;
-    }else{
+    }
+    else if(cost >= 40){
+        document.querySelector('.js-total-cost')
+        .innerHTML = `Total order cost : $${cost}`;
+
         document.querySelector('.js-total-cost')
           .innerHTML = `Total order cost : $${cost} [Free Shipping]`;
+    }
+    else if(cost <= 0){
+        document.querySelector('.js-total-cost').classList.add('js-error-para');
+        
+        document.querySelector('.js-total-cost')
+        .innerHTML = 'Error: Cost must be greater than $0';
     }
 
 }
