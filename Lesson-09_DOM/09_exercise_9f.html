@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9f</title>
+
+    <style>
+        /* From Uiverse.io by alexmaracinaru */ 
+    .js-submit {
+        cursor: pointer;
+        font-weight: 700;
+        transition: all 0.2s;
+        padding: 10px 20px;
+        border-radius: 100px;
+        background: #cfef00;
+        border: 1px solid transparent;
+        font-size: 15px;
+        }
+
+    .js-submit:hover {
+        background: #c4e201;
+        }
+
+    .js-submit:active {
+        transform: scale(0.95);
+        }
+
+    .js-input{
+        padding: 10px 50px 10px 10px ;
+        border: 2px solid rgb(178, 178, 15);
+        border-radius: 10px;
+    }
+
+    </style>
+
+</head>
+<body>
+    
+    <div>
+        <input class="js-input" type="text" placeholder="Enter Your name" onkeydown="
+        printonEnter(event);
+        " onkeyup="
+            keyup(event);">
+
+        <button class="js-submit" onclick="
+            printInput();
+        ">Submit</button>
+
+        <p class="js-para"></p>
+        </div>
+
+    <script src="09_exercise_9f.js"></script>
+</body>
+</html>
