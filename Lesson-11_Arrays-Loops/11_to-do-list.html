@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="stylesheet" href="11_to-do-list.css">
 </head>
 <body>
     
-    <input class="js-input" placeholder="add to do" type="text"  onkeyup="
-        keyUpEnter(event);
-    ">
+    <div class="input-grid">
 
-    <button class="add-button" onclick="
-        todo();
-    ">Add</button>
+        <input class="js-input" placeholder="add to do" type="text"  onkeyup="
+            keyUpEnter(event);
+        ">
 
-    <p class="js-worklist"></p>
+        <input class="date-input" type="date" name="" id="">
 
+        <button class="add-button" onclick="
+            todo();
+        ">Add</button>
+    </div>
+
+    <div class="js-todo-list">
+
+    </div>
     <script src="11_to-do-list.js"></script>
 </body>
 </html>

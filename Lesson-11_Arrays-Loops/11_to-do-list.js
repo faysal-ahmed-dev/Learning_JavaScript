@@ -1,18 +1,47 @@
 
 let arrTodo = [];
 
+console.log(arrTodo);
+
 function todo() {
-    const inputValue = document.querySelector('.js-input').value;
 
-    arrTodo.push(inputValue);
+    const doName = document.querySelector('.js-input').value;
 
-    console.log(arrTodo);
+    const dueDate = document.querySelector('.date-input').value;
 
-    document.querySelector('.js-worklist')
-    .innerHTML = arrTodo;
+    arrTodo.push(
+        {
+            doName,
+            dueDate,
+    });
+
+    renderHtml();
 
     document.querySelector('.js-input')
         .value = '';
+}
+
+
+function renderHtml() {
+    
+    let todoListHtml = '';
+
+    for(let i=0; i < arrTodo.length; i++){
+
+        todoListHtml += 
+            `
+            <div> ${arrTodo[i].doName} </div>
+            <div> ${arrTodo[i].dueDate} </div>
+            <button class="js-delete-button" onclick="
+                    arrTodo.splice(${i}, 1);
+                    console.log(arrTodo);
+                    renderHtml();
+                ">Delete</button>
+            `;
+    }
+
+    document.querySelector('.js-todo-list')
+    .innerHTML = todoListHtml;
 }
 
 function keyUpEnter(event) {
