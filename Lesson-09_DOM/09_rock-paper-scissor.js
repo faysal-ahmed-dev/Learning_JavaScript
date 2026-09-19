@@ -16,7 +16,6 @@
             }
         };
 
-        scoreElemUpdate();
 
         function scoreElemUpdate(){
             document.querySelector('.js-score')
