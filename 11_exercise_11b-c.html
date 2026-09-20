@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 11b</title>
+</head>
+<body>
+    
+
+    <script>
+        // exercise 11b: write a function that takes an array and return the last value of it.
+
+        const arr = [1,2,3,4,5,6];
+        const arrStr = ['hi', 'hello', 'bye'];
+
+        const value = lastValue(arr);
+        console.log(value);
+
+        const strValue = lastValue(arrStr);
+        console.log(strValue);
+        
+        
+
+        function lastValue(arr) {
+            const lastValue = arr[arr.length - 1];
+
+            return lastValue;
+        }
+
+        // exercise 11c: write a function that takes an array and returns an array where the first and last value ate swapped
+
+        const arrayB = [12,43,15,67,34,89,45];
+
+        const swapValue = swapArray(arrayB);
+        console.log(swapValue);
+        
+
+        function swapArray(arr) {
+            let temp;
+            temp = arr[0];
+            arr[0] = arr[arr.length -1];
+            arr[arr.length - 1] = temp;
+
+            return arr;
+        }
+        
+    </script>
+</body>
+</html>
