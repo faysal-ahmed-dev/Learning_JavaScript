@@ -6,6 +6,11 @@ const fnc = function() {
     
 }
 
+// arrow function,
+// const fnc = () => {
+//     console.log('Set Timeout');   
+// }
+
 setTimeout(fnc, 2000);
 
 setTimeout(function(){
