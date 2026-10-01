@@ -67,7 +67,7 @@ document.querySelectorAll('.js-add-to-cart')
 
     const productId = button.dataset.productId;
 
-    const selectQuantity = Number(document.querySelector(`.js-cart-quantity-${productId}`).value);
+   const selectQuantity = Number(document.querySelector(`.js-cart-quantity-${productId}`).value);
   
       addToCart(productId, selectQuantity);
       
