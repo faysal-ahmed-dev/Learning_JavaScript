@@ -1,4 +1,4 @@
-import {cart, deleteCart} from '../data/cart.js';
+import {cart, deleteCart, updateDeliveryOptions} from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js'; 
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
@@ -14,12 +14,25 @@ cart.forEach((cartItem) => {
         if(productId === products.id){
             matchingProduct = products;
         }
-    })
+    });
+
+    const today = dayjs();
+
+    const deliveryOption = deliveryOptions.find((option) => {
+        return option.id === cartItem.deliveryOptionsId;
+    });
+
+    const deliveryDate = today.add(
+        deliveryOption.deliveryDays,
+        'days'
+    );
+
+    const dateString = deliveryDate.format('dddd, MMMM D, YYYY');
 
     checkoutsummaryHTML += `
     <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
         <div class="delivery-date">
-            Delivery date: Tuesday, June 21
+            Delivery date: ${dateString};
         </div>
 
         <div class="cart-item-details-grid">
@@ -80,7 +93,7 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
         const isChecked = deliveryOptions.id === cartItem.deliveryOptionsId;
 
         deliveryHTML += `
-            <div class="delivery-option">
+            <div class="delivery-option js-delivery-option" data-product-id= "${matchingProduct.id}" data-delivery-options-id = "${deliveryOptions.id}">
                 <input type="radio"
                 ${isChecked ? 'checked' : ''}
                 class="delivery-option-input"
@@ -116,5 +129,15 @@ document.querySelectorAll('.js-delete')
         
         deleteContainer.remove();
            
+        });
+    });
+
+document.querySelectorAll('.js-delivery-option')
+    .forEach((element)=>{
+        element.addEventListener('click', ()=>{
+            const {productId, deliveryOptionsId} = element.dataset;
+           // shorthand of const productId = element.dataset.productId;
+
+            updateDeliveryOptions(productId, deliveryOptionsId);
         });
     });
