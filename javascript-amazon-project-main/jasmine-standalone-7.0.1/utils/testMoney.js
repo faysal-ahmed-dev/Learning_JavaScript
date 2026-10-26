@@ -1,4 +1,4 @@
-import { formatCurrency } from "../scripts/utils/money.js";
+import { formatCurrency } from "../../scripts/utils/money.js";
 
 describe('test suit: formatCurrancy()', () => {
     it('(4095) => "40.95" ->', () => {
