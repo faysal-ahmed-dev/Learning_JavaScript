@@ -22,6 +22,8 @@ function Cart(localStorageKey) {
                     deliveryOptionsId: '2'
                 }
                 ];
+
+                this.saveToStorage();
             }
         },
     
