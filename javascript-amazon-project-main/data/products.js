@@ -52,7 +52,7 @@ class Clothing extends Product {
 
 export let products = [];
 
-function loadProducts() {
+export function loadProducts(fncRenderProducts) {
     
   const xhr = new XMLHttpRequest();
   
@@ -66,6 +66,8 @@ function loadProducts() {
     });
 
     console.log(products);
+
+    fncRenderProducts();
     
   });
 
@@ -73,7 +75,7 @@ function loadProducts() {
   xhr.send();
 }
 
-loadProducts();
+//loadProducts();
 
 
 // export const products = [
