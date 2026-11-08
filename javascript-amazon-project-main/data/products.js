@@ -75,7 +75,7 @@ export function loadProducts(fncRenderProducts) {
   xhr.send();
 }
 
-//loadProducts();
+ //loadProducts();
 
 
 // export const products = [
