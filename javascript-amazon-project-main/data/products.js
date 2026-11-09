@@ -65,7 +65,7 @@ export function loadProducts(fncRenderProducts) {
       return new Product(productDetails);
     });
 
-    console.log(products);
+    console.log('load products');
 
     fncRenderProducts();
     
